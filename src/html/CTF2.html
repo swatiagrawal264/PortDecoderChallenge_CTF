@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nice netcat</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 20px;
+        background-image:url('background.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #333;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background: rgb(255, 255, 255);
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        border: 2px solid #5d3fd3;
+    }
+    h1, p {
+        color: #5d3fd3;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #5d3fd3;
+        margin-top: 20px;
+    }
+    input[type="text"] {  /* More specific selector for text inputs */
+        width: 470px;     /* Adjusted width */
+        height: 15px;     /* Adjusted height */
+    }
+    button {
+        background-color: #5d3fd3;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #3a1b98;
+    }
+    img {
+        max-width: 90%;
+        display: block;
+        margin-left: 30px;
+        border: 4px solid #5d3fd3;
+    }
+    #response {
+        font-weight: bold;
+        color: #d35400;
+        padding-top: 10px;
+    }
+    button.hint-button{
+        padding: 6px 6px; /* Reduced padding */
+        font-size: 16px; /* Reduced font size */
+        width: 80px; /* Explicit width setting, adjust as needed */
+        background-color: #10840e;
+        color: white;
+        border-radius: 5px; /* Optional: adjust for aesthetic preference */
+        border: 1px solid #10840e; /* Optional: adds a border */
+        box-shadow: #333;
+    }
+     .command code {
+        font-weight: bold; /* Makes the text bold */
+        color: #0f0301; /* Changes the color to a vibrant orange */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>2) Nice netcat</h1>
+    <p>There is a nice program that you can talk to by using this command in a shell. Use the PORT that you just got:<br><br><span class="command"><code>$ nc localhost "PORT"</code></span><br><br> but remember its English is a little ASCew...</p>
+    <img src="Cat.webp"Cat Image">
+    <label for="flag-input">Enter the flag:</label>
+    <input type="text" id="flag-input" placeholder="...">
+    <button onclick="checkFlag()">Submit</button>
+    <button class="hint-button" onclick="showHint()">Hint</button>
+<p id="hint" style="display:none; color: #5d3fd3; margin-top: 10px;">Use ASCII </p>
+
+    <p id="response"></p>
+</div>
+
+<script>
+function checkFlag() {
+    var input = document.getElementById('flag-input').value;
+    var response = document.getElementById('response');
+    if (input === "SwatiCTF{You_Got_it}") {
+        response.innerHTML = "Congratulations!!";
+        response.style.color = '#27ae60'; // Green for success
+    } else {
+        response.innerHTML = "Oops, Try again.";
+        response.style.color = '#c0392b'; // Red for error
+    }
+}
+function showHint() {
+    var hint = document.getElementById('hint');
+    if (hint.style.display === 'block') {
+        hint.style.display = 'none'; // If visible, hide it
+    } else {
+        hint.style.display = 'block'; // If hidden, show it
+    }
+}
+</script>
+</body>
+</html>

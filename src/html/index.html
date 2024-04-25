@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gateway Riddle</title>
+<style>
+    body {
+        font-family: 'Calibri', sans-serif;
+        margin: 20px;
+        background-image:url('background.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #333;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background: rgb(255, 255, 255);
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        border: 2px solid #5d3fd3;
+    }
+    h1, p {
+        color: #5d3fd3; /* Purple text for headers and paragraphs */
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 2px solid #5d3fd3;
+        margin-top: 20px;
+    }
+    button {
+        background-color: #5d3fd3;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        
+    }
+    button:hover {
+        background-color: #3a1b98;
+    }
+    img {
+        max-width: 80%;
+        display: block;
+        margin-left: 60px;
+        border: 4px solid #5d3fd3;
+        
+        
+    }
+    #response {
+        font-weight: bold;
+        color: #d35400;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+    input[type="text"] {  /* More specific selector for text inputs */
+        width: 372px;     /* Adjusted width */
+        height: 15px;     /* Adjusted height */
+    }
+    button.hint-button{
+        padding: 6px 6px; /* Reduced padding */
+        font-size: 16px; /* Reduced font size */
+        width: 80px; /* Explicit width setting, adjust as needed */
+        background-color: #10840e;
+        color: white;
+        border-radius: 5px; /* Optional: adjust for aesthetic preference */
+        border: 1px solid #10840e; /* Optional: adds a border */
+        box-shadow: #333;
+        
+        
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>1) The Gateway Riddle</h1>
+    <p>Welcome, seeker of secrets! To advance in your quest, you must first unlock the digital gate. The key lies hidden within the cryptic code:<br> <br> "VGhlIFBPUlQgaXMgMjAw"<br><br> Decrypt this enigma to find the way forward....</p>
+    <img src="64.jpg" alt="Baseball Image">
+    <label for="port-input">Enter the PORT </label>
+    <input type="text" id="port-input" placeholder="...">
+    <button onclick="verifyPort()">Unlock</button>
+    <button class="hint-button" onclick="showHint()">Hint</button>
+<p id="hint" style="display:none; color: #5d3fd3; margin-top: 10px;">Check the nob of the lock above to know how to decrypt!!</p>
+
+    <p id="response"></p>
+</div>
+
+<script>
+function verifyPort() {
+    var input = document.getElementById('port-input').value;
+    var response = document.getElementById('response');
+    if (input === "200") {
+        window.location.href = 'CTF2.html'; // Redirects to the Cat CTF page
+    } else {
+        response.innerHTML = "Incorrect. Try again.";
+        response.style.color = '#c0392b'; // Red for error
+    }
+}
+function showHint() {
+    var hint = document.getElementById('hint');
+    if (hint.style.display === 'block') {
+        hint.style.display = 'none'; // If visible, hide it
+    } else {
+        hint.style.display = 'block'; // If hidden, show it
+    }
+}
+
+</script>
+</body>
+</html>

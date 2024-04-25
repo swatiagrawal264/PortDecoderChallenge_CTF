@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    build: ./src/html
+    ports:
+      - "80:80"
+  ctf-service:
+    build: ./src/app
+    ports:
+      - "200:200"

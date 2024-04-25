@@ -1,0 +1,5 @@
+##INSTRUCTIONS##
+
+1) Run the "CTF.py" code. It will act as the server and will start listening. 
+
+2) Now "CTF1.html" page. 

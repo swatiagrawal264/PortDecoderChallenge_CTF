@@ -1,0 +1,55 @@
+name: PortDecoderChallenge
+
+description: |
+  author: Swati Agrawal
+  
+  Challenge Overview:
+
+  This challenge tests your ability to decode messages and interact with network services to retrieve flags. 
+  It's designed to enhance your skills in deciphering common encoding schemes and applying them in a simulated real-world 
+  scenario.
+  
+CS561 CTF Challenge Setup: |
+
+## Prerequisites
+
+Ensure you have Docker Desktop installed on your system.
+You can find the installation instructions on the official Docker website.
+
+## Getting Started
+
+1. Clone the repository or download the project to your local machine.
+2. Navigate to the directory containing the `docker-compose.yml` file. "CS561_CTF"
+
+## Running the Challenge
+
+Step 1: Build the Docker images and start the containers using the following command 
+
+```bash
+docker-compose up --build
+
+Step 2: Once the containers are running, open a web browser and visit http://localhost to access the first part of the 
+challenge (index.html). ##Remember to delete cache 
+
+Step 3: Follow the instructions on the webpage to proceed with the challenge 1. Some decoding is required.
+
+Step 4: Once solved you'll be redirected to challenge 2. You must have "netcat" installed for that. 
+Some decoding is required here as well.
+
+Step 5: Once you decode the flag and paste in the input box the challenge is over and you Win!!
+
+Step 6: When you complete the challenge, you can stop the Docker containers by pressing Ctrl+C 
+in the terminal where the containers are running or by running the following command in a new terminal window
+ 
+```bash 
+docker-compose down
+  
+  
+Additional Notes: 
+
+1. If you encounter any issues with port conflicts, ensure no other services are running on ports 80 or 200 on your system.
+
+2. Delete cache or start http://localhost in incognito mode.
+
+3. Make sure to use the provided docker-compose.yml file for building and running the Docker containers, 
+as it contains all the necessary configuration.
